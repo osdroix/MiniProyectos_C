@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="cafeteriaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Productos">
+          <Key>
+            <PropertyRef Name="id_prod" />
+          </Key>
+          <Property Name="id_prod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo_prod" Type="int" Nullable="false" />
+          <Property Name="invetario_prod" Type="int" Nullable="false" />
+          <Property Name="precio_prod" Type="float" Nullable="false" />
+          <Property Name="nombre_prod" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="img_prod" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Productos_ofertas">
+          <Key>
+            <PropertyRef Name="id_ofertas" />
+          </Key>
+          <Property Name="id_ofertas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="invetario_ofertas" Type="int" Nullable="false" />
+          <Property Name="precio_ofertas" Type="float" Nullable="false" />
+          <Property Name="nombre_ofertas" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="img_ofertas" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="descripcion_ofertas" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ticket">
+          <Key>
+            <PropertyRef Name="id_emple" />
+          </Key>
+          <Property Name="id_emple" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha_emple" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="venta_emple" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="usuario_emple" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="usucomprador_emple" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="codigo_emple" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ticket_usu">
+          <Key>
+            <PropertyRef Name="id_t" />
+          </Key>
+          <Property Name="id_t" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha_t" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="venta_t" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="usuario_t" Type="varchar" MaxLength="100" />
+          <Property Name="codigo_t" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="id_usu" />
+          </Key>
+          <Property Name="id_usu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo_usu" Type="int" Nullable="false" />
+          <Property Name="Usuario_usu" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="correo_usu" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="contra_usu" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="cafeteriaModelStoreContainer">
+          <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Productos_ofertas" EntityType="Self.Productos_ofertas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ticket" EntityType="Self.ticket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ticket_usu" EntityType="Self.ticket_usu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="cafeteriaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Productos">
+          <Key>
+            <PropertyRef Name="id_prod" />
+          </Key>
+          <Property Name="id_prod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo_prod" Type="Int32" Nullable="false" />
+          <Property Name="invetario_prod" Type="Int32" Nullable="false" />
+          <Property Name="precio_prod" Type="Double" Nullable="false" />
+          <Property Name="nombre_prod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="img_prod" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Productos_ofertas">
+          <Key>
+            <PropertyRef Name="id_ofertas" />
+          </Key>
+          <Property Name="id_ofertas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="invetario_ofertas" Type="Int32" Nullable="false" />
+          <Property Name="precio_ofertas" Type="Double" Nullable="false" />
+          <Property Name="nombre_ofertas" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="img_ofertas" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion_ofertas" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ticket">
+          <Key>
+            <PropertyRef Name="id_emple" />
+          </Key>
+          <Property Name="id_emple" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha_emple" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="venta_emple" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usuario_emple" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usucomprador_emple" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigo_emple" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ticket_usu">
+          <Key>
+            <PropertyRef Name="id_t" />
+          </Key>
+          <Property Name="id_t" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha_t" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="venta_t" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usuario_t" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="codigo_t" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="id_usu" />
+          </Key>
+          <Property Name="id_usu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo_usu" Type="Int32" Nullable="false" />
+          <Property Name="Usuario_usu" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="correo_usu" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contra_usu" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="cafeteriaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Productos" EntityType="Self.Productos" />
+          <EntitySet Name="Productos_ofertas" EntityType="Self.Productos_ofertas" />
+          <EntitySet Name="ticket" EntityType="Self.ticket" />
+          <EntitySet Name="ticket_usu" EntityType="Self.ticket_usu" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="cafeteriaModelStoreContainer" CdmEntityContainer="cafeteriaEntities">
+          <EntitySetMapping Name="Productos">
+            <EntityTypeMapping TypeName="cafeteriaModel.Productos">
+              <MappingFragment StoreEntitySet="Productos">
+                <ScalarProperty Name="id_prod" ColumnName="id_prod" />
+                <ScalarProperty Name="tipo_prod" ColumnName="tipo_prod" />
+                <ScalarProperty Name="invetario_prod" ColumnName="invetario_prod" />
+                <ScalarProperty Name="precio_prod" ColumnName="precio_prod" />
+                <ScalarProperty Name="nombre_prod" ColumnName="nombre_prod" />
+                <ScalarProperty Name="img_prod" ColumnName="img_prod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Productos_ofertas">
+            <EntityTypeMapping TypeName="cafeteriaModel.Productos_ofertas">
+              <MappingFragment StoreEntitySet="Productos_ofertas">
+                <ScalarProperty Name="id_ofertas" ColumnName="id_ofertas" />
+                <ScalarProperty Name="invetario_ofertas" ColumnName="invetario_ofertas" />
+                <ScalarProperty Name="precio_ofertas" ColumnName="precio_ofertas" />
+                <ScalarProperty Name="nombre_ofertas" ColumnName="nombre_ofertas" />
+                <ScalarProperty Name="img_ofertas" ColumnName="img_ofertas" />
+                <ScalarProperty Name="descripcion_ofertas" ColumnName="descripcion_ofertas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ticket">
+            <EntityTypeMapping TypeName="cafeteriaModel.ticket">
+              <MappingFragment StoreEntitySet="ticket">
+                <ScalarProperty Name="id_emple" ColumnName="id_emple" />
+                <ScalarProperty Name="fecha_emple" ColumnName="fecha_emple" />
+                <ScalarProperty Name="venta_emple" ColumnName="venta_emple" />
+                <ScalarProperty Name="usuario_emple" ColumnName="usuario_emple" />
+                <ScalarProperty Name="usucomprador_emple" ColumnName="usucomprador_emple" />
+                <ScalarProperty Name="codigo_emple" ColumnName="codigo_emple" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ticket_usu">
+            <EntityTypeMapping TypeName="cafeteriaModel.ticket_usu">
+              <MappingFragment StoreEntitySet="ticket_usu">
+                <ScalarProperty Name="id_t" ColumnName="id_t" />
+                <ScalarProperty Name="fecha_t" ColumnName="fecha_t" />
+                <ScalarProperty Name="venta_t" ColumnName="venta_t" />
+                <ScalarProperty Name="usuario_t" ColumnName="usuario_t" />
+                <ScalarProperty Name="codigo_t" ColumnName="codigo_t" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="cafeteriaModel.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="id_usu" ColumnName="id_usu" />
+                <ScalarProperty Name="tipo_usu" ColumnName="tipo_usu" />
+                <ScalarProperty Name="Usuario_usu" ColumnName="Usuario_usu" />
+                <ScalarProperty Name="correo_usu" ColumnName="correo_usu" />
+                <ScalarProperty Name="contra_usu" ColumnName="contra_usu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

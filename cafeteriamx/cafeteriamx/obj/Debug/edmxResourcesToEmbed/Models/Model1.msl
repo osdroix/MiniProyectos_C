@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="cafeteriaModelStoreContainer" CdmEntityContainer="cafeteriaEntities">
+    <EntitySetMapping Name="Productos">
+      <EntityTypeMapping TypeName="cafeteriaModel.Productos">
+        <MappingFragment StoreEntitySet="Productos">
+          <ScalarProperty Name="id_prod" ColumnName="id_prod" />
+          <ScalarProperty Name="tipo_prod" ColumnName="tipo_prod" />
+          <ScalarProperty Name="invetario_prod" ColumnName="invetario_prod" />
+          <ScalarProperty Name="precio_prod" ColumnName="precio_prod" />
+          <ScalarProperty Name="nombre_prod" ColumnName="nombre_prod" />
+          <ScalarProperty Name="img_prod" ColumnName="img_prod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productos_ofertas">
+      <EntityTypeMapping TypeName="cafeteriaModel.Productos_ofertas">
+        <MappingFragment StoreEntitySet="Productos_ofertas">
+          <ScalarProperty Name="id_ofertas" ColumnName="id_ofertas" />
+          <ScalarProperty Name="invetario_ofertas" ColumnName="invetario_ofertas" />
+          <ScalarProperty Name="precio_ofertas" ColumnName="precio_ofertas" />
+          <ScalarProperty Name="nombre_ofertas" ColumnName="nombre_ofertas" />
+          <ScalarProperty Name="img_ofertas" ColumnName="img_ofertas" />
+          <ScalarProperty Name="descripcion_ofertas" ColumnName="descripcion_ofertas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ticket">
+      <EntityTypeMapping TypeName="cafeteriaModel.ticket">
+        <MappingFragment StoreEntitySet="ticket">
+          <ScalarProperty Name="id_emple" ColumnName="id_emple" />
+          <ScalarProperty Name="fecha_emple" ColumnName="fecha_emple" />
+          <ScalarProperty Name="venta_emple" ColumnName="venta_emple" />
+          <ScalarProperty Name="usuario_emple" ColumnName="usuario_emple" />
+          <ScalarProperty Name="usucomprador_emple" ColumnName="usucomprador_emple" />
+          <ScalarProperty Name="codigo_emple" ColumnName="codigo_emple" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ticket_usu">
+      <EntityTypeMapping TypeName="cafeteriaModel.ticket_usu">
+        <MappingFragment StoreEntitySet="ticket_usu">
+          <ScalarProperty Name="id_t" ColumnName="id_t" />
+          <ScalarProperty Name="fecha_t" ColumnName="fecha_t" />
+          <ScalarProperty Name="venta_t" ColumnName="venta_t" />
+          <ScalarProperty Name="usuario_t" ColumnName="usuario_t" />
+          <ScalarProperty Name="codigo_t" ColumnName="codigo_t" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="cafeteriaModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="id_usu" ColumnName="id_usu" />
+          <ScalarProperty Name="tipo_usu" ColumnName="tipo_usu" />
+          <ScalarProperty Name="Usuario_usu" ColumnName="Usuario_usu" />
+          <ScalarProperty Name="correo_usu" ColumnName="correo_usu" />
+          <ScalarProperty Name="contra_usu" ColumnName="contra_usu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

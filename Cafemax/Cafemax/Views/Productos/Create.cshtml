@@ -1,0 +1,65 @@
+﻿@model Cafemax.Models.Productos
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="party">
+    <h1 class="Logo">
+        <img class="img-fluid" alt="Responsive image" src="https://image.flaticon.com/icons/png/128/590/590749.png" width="40" height="40" />
+        Café-MXN
+    </h1>
+    <button class="agregar" onclick="location.href = '/Productos/Index/'">
+        Lista de productos
+    </button>
+    <button class="agregar1" onclick="location.href = '#'">
+        <img class="img-fluid" alt="Responsive image" src="https://cdn-icons-png.flaticon.com/512/1828/1828490.png" width="35" height="35" />
+    </button>
+</div>
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+<center>
+    <div class="menu">
+        <h4 class="agregar">
+            <img class="img-fluid" alt="Responsive image" src="https://png.pngtree.com/png-vector/20190217/ourlarge/pngtree-vector-add-icon-png-image_555576.jpg" width="50" height="50" />
+            Nuevo Producto
+        </h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="party">
+            <h6>Tipo de producto:</h6>
+            <select class="form-control" type="text" name="tipo_prod" id="tipo_prod">
+                <option value="1">Cremas</option>
+                <option value="2">Café</option>
+                <option value="3">Reposteria</option>
+                <option value="4">Té</option>
+                <option value="5">Desayunos</option>
+            </select>
+        </div>
+        <div class="party">
+            <input class="form-control" type="text" placeholder="Stock del producto" name="invetario_prod" id="invetario_prod">
+            <img src="https://www.kindpng.com/picc/m/466-4663559_warehouse-stock-icon-png-transparent-png.png" width="50" height="40" /><br>
+        </div>
+        <div class="party">
+            <input class="form-control" type="text" placeholder="Precio del producto" name="precio_prod" id="precio_prod">
+            <img src="https://w7.pngwing.com/pngs/588/204/png-transparent-money-bag-drawing-money-bag-gunny-sack-business-affiliate-marketing.png" width="60" height="40" /><br>
+        </div>
+        <div class="party">
+            <input class="form-control" type="text" placeholder="Nombre del producto" name="nombre_prod" id="nombre_prod" />
+            <img src="https://static.vecteezy.com/system/resources/previews/002/412/477/non_2x/coffee-cup-logo-coffee-shop-icon-design-free-vector.jpg" width="50" height="40" /><br>
+        </div>
+        <div class="party">
+            <input class="form-control" type="text" placeholder="Link-Img del producto" name="img_prod" id="img_prod">
+            <img src="https://png.pngtree.com/element_our/20190601/ourlarge/pngtree-yellow-link-icon-image_1344698.jpg" width="55" height="55" /><hr>
+        </div>
+        <center>
+            <input type="submit" value="subir" class="btn btn-success" />
+        </center>
+    </div>
+</center>
+   }
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

@@ -1,0 +1,80 @@
+﻿@model List<Cafemax.Models.Productos>
+@{
+    ViewBag.Title = "Cafeteria MX";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div class="party">
+        <h1 class="Logo">
+            <img class="img-fluid" alt="Responsive image" src="https://image.flaticon.com/icons/png/128/590/590749.png" width="40" height="40" />
+            Café-MXN
+        </h1>
+            <button class="agregar" onclick="location.href = '/Usus_clientes/Index/'">
+               Empleados
+            </button>
+            <button class="agregar1" onclick="location.href = '#'">
+                <img class="img-fluid" alt="Responsive image" src="https://cdn-icons-png.flaticon.com/512/1828/1828490.png" width="35" height="35" />
+            </button>
+    </div>
+<div class="party">
+    <div class="muro">
+        @foreach (var f in Model)
+                {
+        <div class="capsula">
+            <center>
+                <h3 class="agregar">@f.nombre_prod</h3>
+                <img class="img" alt="Responsive image" src=" @f.img_prod" width="200" height="200" />
+                <h5 class="agregar">Precio : @f.precio_prod MXN</h5>
+            </center>
+            <p align="right">
+                <button class="btn btn-success" onclick="location.href = '/Productos/Edit/?id=@f.id_prod'">
+                    Editar
+                </button>
+                    <button class="agregar" onclick="location.href = '/Productos/Delete/?id=@f.id_prod'">
+                        <img alt="Responsive image" src="https://help.turitop.com/hc/article_attachments/360015203439/basura.png" width="30" height="30" />
+                    </button>
+            </p>
+            <center><label>@f.invetario_prod Disponibles</label></center>
+        </div>
+                }
+    </div>
+    <div class="menu">
+        <button class="agregar" onclick="location.href = '/Productos/Create/'">
+            <img class="img-fluid" alt="Responsive image" src="https://png.pngtree.com/png-vector/20190217/ourlarge/pngtree-vector-add-icon-png-image_555576.jpg" width="50" height="50" />
+            Agregar Producto
+        </button>
+        <h3 class="agregar">Cafegorias</h3>
+        <div class="party">
+            <button class="agregar" onclick="location.href = '/Productos/Create/'">
+                <img class="img-fluid" alt="Responsive image" src="https://png.pngtree.com/png-vector/20201126/ourlarge/pngtree-hand-drawn-style-of-takeaway-ice-coffee-vector-illustration-png-image_2477591.jpg" width="50" height="50" />
+                Cremas
+            </button>
+            <button class="agregar" onclick="location.href = '/Productos/Create/'">
+                <img class="img-fluid" alt="Responsive image" src="https://image.flaticon.com/icons/png/128/590/590749.png" width="50" height="50" />
+                Té
+            </button>
+            <button class="agregar" onclick="location.href = '/Productos/Create/'">
+                <img class="img-fluid" alt="Responsive image" src="https://w7.pngwing.com/pngs/874/573/png-transparent-coffee-cafe-tea-cartoon-shark-breakfast-cafe-tea.png" width="50" height="50" />
+                Café
+            </button>
+        </div>
+        <div class="party">
+            <button class="agregar" onclick="location.href = '/Productos/Create/'">
+                <img class="img-fluid" alt="Responsive image" src="https://w1.pngwing.com/pngs/823/96/png-transparent-eating-tea-cake-food-restaurant-biscuits-cartoon-pastry.png" width="70" height="55" />
+                Reposteria
+            </button>
+            <button class="agregar" onclick="location.href = '/Productos/Create/'">
+                <img class="img-fluid" alt="Responsive image" src="https://w7.pngwing.com/pngs/339/597/png-transparent-breakfast-hotel-food-computer-icons-buffet-breakfast-food-text-breakfast.png" width="70" height="50" />
+                Desayunos
+            </button>
+        </div>
+        <hr />
+        <center>
+            <button class="agregar" onclick="location.href = '/Productos/Create/'">
+                <img class="img-fluid" alt="Responsive image" src="https://www.pngitem.com/pimgs/m/8-84853_splash-de-oferta-png-amarelo-transparent-png.png" width="50" height="50" />
+                Ofertas
+            </button>
+        </center>
+    </div>
+</div>
+
+

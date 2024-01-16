@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\MVCCrud",
+    "\\MVCCrud\\Controllers",
+    "\\MVCCrud\\Models",
+    "\\MVCCrud\\obj",
+    "\\MVCCrud\\Views",
+    "\\MVCCrud\\Views\\Home",
+    "\\MVCCrud\\Views\\Shared",
+    "\\MVCCrud\\Views\\Tabla",
+    "\\packages"
+  ],
+  "SelectedNode": "\\MVCCrud\\Controllers\\TablaController.cs",
+  "PreviewInSolutionExplorer": false
+}

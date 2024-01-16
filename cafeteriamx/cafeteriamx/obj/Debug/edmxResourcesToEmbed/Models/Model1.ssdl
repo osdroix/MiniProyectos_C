@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="cafeteriaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="id_prod" />
+    </Key>
+    <Property Name="id_prod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipo_prod" Type="int" Nullable="false" />
+    <Property Name="invetario_prod" Type="int" Nullable="false" />
+    <Property Name="precio_prod" Type="float" Nullable="false" />
+    <Property Name="nombre_prod" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="img_prod" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Productos_ofertas">
+    <Key>
+      <PropertyRef Name="id_ofertas" />
+    </Key>
+    <Property Name="id_ofertas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="invetario_ofertas" Type="int" Nullable="false" />
+    <Property Name="precio_ofertas" Type="float" Nullable="false" />
+    <Property Name="nombre_ofertas" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="img_ofertas" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="descripcion_ofertas" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ticket">
+    <Key>
+      <PropertyRef Name="id_emple" />
+    </Key>
+    <Property Name="id_emple" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fecha_emple" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="venta_emple" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="usuario_emple" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="usucomprador_emple" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="codigo_emple" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ticket_usu">
+    <Key>
+      <PropertyRef Name="id_t" />
+    </Key>
+    <Property Name="id_t" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fecha_t" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="venta_t" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="usuario_t" Type="varchar" MaxLength="100" />
+    <Property Name="codigo_t" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="id_usu" />
+    </Key>
+    <Property Name="id_usu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipo_usu" Type="int" Nullable="false" />
+    <Property Name="Usuario_usu" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="correo_usu" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="contra_usu" Type="varchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="cafeteriaModelStoreContainer">
+    <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Productos_ofertas" EntityType="Self.Productos_ofertas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ticket" EntityType="Self.ticket" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ticket_usu" EntityType="Self.ticket_usu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

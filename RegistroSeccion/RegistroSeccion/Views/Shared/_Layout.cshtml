@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.dataTables.js"></script>
+
+</head>
+<body style="background: -webkit-linear-gradient(90deg, lightgray 25%, lightsteelblue 75%)">
+    <header style="background-color: black; color: white; text-align:center">
+        <br /><h3>.: Registro de Seccion :.</h3><br />
+    </header>
+    <nav class="row" style="background-color: gray; height: 34px; margin: 0px 0px 0px 0px">
+        <div class="btn-group">
+            <button class="btn btn-primary" onclick="location.href ='../Seccion/Index'">Seccion</button>
+            <button class="btn btn-primary" onclick="location.href= '../Alumno/Index'">Alumno</button>
+            <button class="btn btn-primary" onclick="location.href= '../Curso/Index'">Curso</button>
+        </div>
+    </nav>
+    <main class="row" style="margin: 2% 2% 2% 2%; background-color: beige; width: 96%">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </main>
+    <footer style="background-color: black; color: white; text-align:center">
+        <br /><small>Todos los derechos reservados.</small><br /><br />
+    </footer>
+</body>
+</html>

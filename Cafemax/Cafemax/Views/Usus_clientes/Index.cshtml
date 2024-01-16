@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Cafemax.Models.Usuarios>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo_usu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario_usu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.correo_usu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contra_usu)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo_usu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario_usu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correo_usu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contra_usu)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_usu }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_usu }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_usu })
+        </td>
+    </tr>
+}
+
+</table>
